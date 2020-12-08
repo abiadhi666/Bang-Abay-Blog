@@ -14,7 +14,11 @@
 Auth::routes();
 
 Route::get('/', 'BlogController@index');
-
+Route::get('/posts/{slug}', 'BlogController@blog_post')->name('blog.post');
+Route::get('/list-post', 'BlogController@list_post')->name('blog.list');
+// {category} is take from model Category because take a data slug category from model Category
+Route::get('/list-category/{category}', 'BlogController@list_category')->name('blog.category');
+Route::get('/search', 'BlogController@search')->name('blog.search');
 Route::group(['middleware'=>'auth'], function () {
     Route::get('/home', 'HomeController@index')->name('home');
     Route::resource('/category', 'CategoryController');
