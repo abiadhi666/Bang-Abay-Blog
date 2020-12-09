@@ -23,12 +23,12 @@
         </a>
         <div class="dropdown-divider"></div>
           <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-            {{ csrf_field() }}
+          {{csrf_field()}}
           </form>
           <a class="dropdown-item" href="{{ route('logout') }}"
           onclick="event.preventDefault();
-                   document.getElementById('logout-form').submit();">
-          Logout
+              document.getElementById('logout-form').submit();">
+              Logout
           </a>
       </div>
     </li>
